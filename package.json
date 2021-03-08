@@ -1,0 +1,18 @@
+{
+  "name": "foundation-parts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "foundation-sites": "^6.6.3",
+    "jquery": "^3.6.0",
+    "motion-ui": "^2.0.3",
+    "what-input": "^5.2.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
