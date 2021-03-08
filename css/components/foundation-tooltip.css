@@ -1,0 +1,121 @@
+/**
+ * Foundation for Sites
+ * Version 6.6.3
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
+.has-tip {
+  position: relative;
+  display: inline-block;
+  border-bottom: dotted 1px #8a8a8a;
+  font-weight: bold;
+  cursor: help;
+}
+
+.tooltip {
+  position: absolute;
+  top: calc(100% + 0.6495rem);
+  z-index: 1200;
+  max-width: 10rem;
+  padding: 0.75rem;
+  border-radius: 0;
+  background-color: #0a0a0a;
+  font-size: 80%;
+  color: #fefefe;
+}
+
+.tooltip::before {
+  position: absolute;
+}
+
+.tooltip.bottom::before {
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 0.75rem;
+  content: '';
+  border-top-width: 0;
+  border-bottom-style: solid;
+  border-color: transparent transparent #0a0a0a;
+  bottom: 100%;
+}
+
+.tooltip.bottom.align-center::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip.top::before {
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 0.75rem;
+  content: '';
+  border-bottom-width: 0;
+  border-top-style: solid;
+  border-color: #0a0a0a transparent transparent;
+  top: 100%;
+  bottom: auto;
+}
+
+.tooltip.top.align-center::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip.left::before {
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 0.75rem;
+  content: '';
+  border-right-width: 0;
+  border-left-style: solid;
+  border-color: transparent transparent transparent #0a0a0a;
+  left: 100%;
+}
+
+.tooltip.left.align-center::before {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip.right::before {
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 0.75rem;
+  content: '';
+  border-left-width: 0;
+  border-right-style: solid;
+  border-color: transparent #0a0a0a transparent transparent;
+  right: 100%;
+  left: auto;
+}
+
+.tooltip.right.align-center::before {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip.align-top::before {
+  bottom: auto;
+  top: 10%;
+}
+
+.tooltip.align-bottom::before {
+  bottom: 10%;
+  top: auto;
+}
+
+.tooltip.align-left::before {
+  left: 10%;
+  right: auto;
+}
+
+.tooltip.align-right::before {
+  left: auto;
+  right: 10%;
+}

@@ -1,0 +1,30 @@
+/**
+ * Foundation for Sites
+ * Version 6.6.3
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
+.float-left {
+  float: left !important;
+}
+
+.float-right {
+  float: right !important;
+}
+
+.float-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.clearfix::before, .clearfix::after {
+  display: table;
+  content: ' ';
+  flex-basis: 0;
+  order: 1;
+}
+
+.clearfix::after {
+  clear: both;
+}

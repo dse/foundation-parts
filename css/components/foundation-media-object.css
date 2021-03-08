@@ -1,0 +1,53 @@
+/**
+ * Foundation for Sites
+ * Version 6.6.3
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
+.media-object {
+  display: flex;
+  margin-bottom: 1rem;
+  flex-wrap: nowrap;
+}
+
+.media-object img {
+  max-width: none;
+}
+
+@media print, screen and (max-width: 39.99875em) {
+  .media-object.stack-for-small {
+    flex-wrap: wrap;
+  }
+}
+
+.media-object-section {
+  flex: 0 1 auto;
+}
+
+.media-object-section:first-child {
+  padding-right: 1rem;
+}
+
+.media-object-section:last-child:not(:nth-child(2)) {
+  padding-left: 1rem;
+}
+
+.media-object-section > :last-child {
+  margin-bottom: 0;
+}
+
+@media print, screen and (max-width: 39.99875em) {
+  .stack-for-small .media-object-section {
+    padding: 0;
+    padding-bottom: 1rem;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .stack-for-small .media-object-section img {
+    width: 100%;
+  }
+}
+
+.media-object-section.main-section {
+  flex: 1 1 0px;
+}

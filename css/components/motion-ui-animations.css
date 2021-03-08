@@ -1,0 +1,119 @@
+/**
+ * Foundation for Sites
+ * Version 6.6.3
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
+.shake {
+  animation-name: shake-7;
+}
+
+@keyframes shake-7 {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
+    transform: translateX(7%);
+  }
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
+    transform: translateX(-7%);
+  }
+}
+
+.spin-cw {
+  animation-name: spin-cw-1turn;
+}
+
+@keyframes spin-cw-1turn {
+  0% {
+    transform: rotate(-1turn);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.spin-ccw {
+  animation-name: spin-ccw-1turn;
+}
+
+@keyframes spin-ccw-1turn {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-1turn);
+  }
+}
+
+.wiggle {
+  animation-name: wiggle-7deg;
+}
+
+@keyframes wiggle-7deg {
+  40%, 50%, 60% {
+    transform: rotate(7deg);
+  }
+  35%, 45%, 55%, 65% {
+    transform: rotate(-7deg);
+  }
+  0%, 30%, 70%, 100% {
+    transform: rotate(0);
+  }
+}
+
+.shake,
+.spin-cw,
+.spin-ccw,
+.wiggle {
+  animation-duration: 500ms;
+}
+
+.infinite {
+  animation-iteration-count: infinite;
+}
+
+.slow {
+  animation-duration: 750ms !important;
+}
+
+.fast {
+  animation-duration: 250ms !important;
+}
+
+.linear {
+  animation-timing-function: linear !important;
+}
+
+.ease {
+  animation-timing-function: ease !important;
+}
+
+.ease-in {
+  animation-timing-function: ease-in !important;
+}
+
+.ease-out {
+  animation-timing-function: ease-out !important;
+}
+
+.ease-in-out {
+  animation-timing-function: ease-in-out !important;
+}
+
+.bounce-in {
+  animation-timing-function: cubic-bezier(0.485, 0.155, 0.24, 1.245) !important;
+}
+
+.bounce-out {
+  animation-timing-function: cubic-bezier(0.485, 0.155, 0.515, 0.845) !important;
+}
+
+.bounce-in-out {
+  animation-timing-function: cubic-bezier(0.76, -0.245, 0.24, 1.245) !important;
+}
+
+.short-delay {
+  animation-delay: 300ms !important;
+}
+
+.long-delay {
+  animation-delay: 700ms !important;
+}

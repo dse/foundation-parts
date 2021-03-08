@@ -1,0 +1,39 @@
+/**
+ * Foundation for Sites
+ * Version 6.6.3
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
+.sticky-container {
+  position: relative;
+}
+
+.sticky {
+  position: relative;
+  z-index: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.sticky.is-stuck {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+}
+
+.sticky.is-stuck.is-at-top {
+  top: 0;
+}
+
+.sticky.is-stuck.is-at-bottom {
+  bottom: 0;
+}
+
+.sticky.is-anchored {
+  position: relative;
+  right: auto;
+  left: auto;
+}
+
+.sticky.is-anchored.is-at-bottom {
+  bottom: 0;
+}

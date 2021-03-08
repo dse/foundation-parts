@@ -1,0 +1,50 @@
+/**
+ * Foundation for Sites
+ * Version 6.6.3
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
+.breadcrumbs {
+  margin: 0 0 1rem 0;
+  list-style: none;
+}
+
+.breadcrumbs::before, .breadcrumbs::after {
+  display: table;
+  content: ' ';
+  flex-basis: 0;
+  order: 1;
+}
+
+.breadcrumbs::after {
+  clear: both;
+}
+
+.breadcrumbs li {
+  float: left;
+  font-size: 0.6875rem;
+  color: #0a0a0a;
+  cursor: default;
+  text-transform: uppercase;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  position: relative;
+  margin: 0 0.75rem;
+  opacity: 1;
+  content: "/";
+  color: #cacaca;
+}
+
+.breadcrumbs a {
+  color: #1779ba;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs .disabled {
+  color: #cacaca;
+  cursor: not-allowed;
+}

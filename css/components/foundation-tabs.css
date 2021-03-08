@@ -1,0 +1,97 @@
+/**
+ * Foundation for Sites
+ * Version 6.6.3
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
+.tabs {
+  margin: 0;
+  border: 1px solid #e6e6e6;
+  background: #fefefe;
+  list-style-type: none;
+}
+
+.tabs::before, .tabs::after {
+  display: table;
+  content: ' ';
+  flex-basis: 0;
+  order: 1;
+}
+
+.tabs::after {
+  clear: both;
+}
+
+.tabs.vertical > li {
+  display: block;
+  float: none;
+  width: auto;
+}
+
+.tabs.simple > li > a {
+  padding: 0;
+}
+
+.tabs.simple > li > a:hover {
+  background: transparent;
+}
+
+.tabs.primary {
+  background: #1779ba;
+}
+
+.tabs.primary > li > a {
+  color: #fefefe;
+}
+
+.tabs.primary > li > a:hover, .tabs.primary > li > a:focus {
+  background: #1673b1;
+}
+
+.tabs-title {
+  float: left;
+}
+
+.tabs-title > a {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #1779ba;
+}
+
+[data-whatinput='mouse'] .tabs-title > a {
+  outline: 0;
+}
+
+.tabs-title > a:hover {
+  background: #fefefe;
+  color: #1468a0;
+}
+
+.tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
+  background: #e6e6e6;
+  color: #1779ba;
+}
+
+.tabs-content {
+  border: 1px solid #e6e6e6;
+  border-top: 0;
+  background: #fefefe;
+  color: #0a0a0a;
+  transition: all 0.5s ease;
+}
+
+.tabs-content.vertical {
+  border: 1px solid #e6e6e6;
+  border-left: 0;
+}
+
+.tabs-panel {
+  display: none;
+  padding: 1rem;
+}
+
+.tabs-panel.is-active {
+  display: block;
+}
