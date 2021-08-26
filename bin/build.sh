@@ -5,10 +5,8 @@ set -o nounset
 shopt -s lastpipe
 
 MAIN () {
-    rm -frv scss || true
-    rm -frv css || true
-    mkdir scss
-    mkdir css
+    mkdir css || true
+    find css -maxdepth 1 -type f -name '[0-9][0-9][0-9]-*.css' -exec rm {} +
 
     declare -a components
     sed -n '/^@include /{s///;s/;$//;p;}' <<EOF | mapfile -t components
@@ -71,25 +69,37 @@ EOF
     for component in "${components[@]}" ; do
         counter+=1
         xxx="$(printf "%03d" "${counter}")"
-        sassfile="scss/${xxx}-${component}.scss"
         cssfile="css/${xxx}-${component}.css"
-        >&2 echo "${component} - ${sassfile} ${cssfile}"
-        if [[ "${component}" = "foundation-global-styles" ]] ; then
-            cat <<EOF >"${sassfile}"
+        >&2 echo "${component} - ${cssfile}"
+        output-component "${component}" | compile-sass > "${cssfile}"
+    done
+}
+
+compile-sass () {
+    if type -p sassc >/dev/null 2>&1 ; then
+        sassc -t expanded -I node_modules/foundation-sites/scss
+    elif type -p scss >/dev/null 2>&1 ; then
+        scss -t expanded -I node_modules/foundation-sites/scss
+    fi
+    # apt-cyg install ruby-sass
+}
+
+output-component () {
+    local component="$1"; shift
+    if [[ "${component}" = "foundation-global-styles" ]] ; then
+        cat <<EOF
 @charset 'utf-8';
 @import "foundation";
 @mixin foundation-normalize {}
 @include ${component};
 EOF
-        else
-            cat <<EOF >"${sassfile}"
+    else
+        cat <<EOF
 @charset 'utf-8';
 @import "foundation";
 @include ${component};
 EOF
-        fi
-        sassc -t expanded -I node_modules/foundation-sites/scss "${sassfile}" "${cssfile}"
-    done
+    fi
 }
 
 ###############################################################################
