@@ -77,9 +77,9 @@ EOF
 
 compile-sass () {
     if type -p sassc >/dev/null 2>&1 ; then
-        sassc -t expanded -I node_modules/foundation-sites/scss
+        sassc -t expanded -I node_modules/foundation-sites/scss -I .
     elif type -p scss >/dev/null 2>&1 ; then
-        scss -t expanded -I node_modules/foundation-sites/scss
+        scss -t expanded -I node_modules/foundation-sites/scss -I .
     fi
     # apt-cyg install ruby-sass
 }
@@ -89,6 +89,7 @@ output-component () {
     if [[ "${component}" = "foundation-global-styles" ]] ; then
         cat <<EOF
 @charset 'utf-8';
+@import "scss/settings";
 @import "foundation";
 @mixin foundation-normalize {}
 @include ${component};
@@ -96,6 +97,7 @@ EOF
     else
         cat <<EOF
 @charset 'utf-8';
+@import "scss/settings";
 @import "foundation";
 @include ${component};
 EOF
